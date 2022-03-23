@@ -10,13 +10,6 @@ from scraper import run_news_scrape, update_scrape, initial_scrape
 
 
 def prev_state():
-    """
-    Previous state of webpage
-    
-    Returns:
-        prev_state : list
-            Last news update entry recorded
-    """
     dir_path = os.path.dirname(os.path.realpath(__file__))
     data_dir_path = dir_path + '\\data' 
     
@@ -40,17 +33,6 @@ def prev_state():
         print('\nGiven directory does not exist')
 
 def check_state(url):
-    """Check webpage status
-    
-    Parameters:
-        url : str
-        
-    Returns:
-        check_state : None or dict
-            If there is a difference in state a dict is returned.
-            Otherwise None.
-    """
-    
     # read in the last news update from data directory
     # this contains the last headline from the site
     prev_data = prev_state()
@@ -69,24 +51,6 @@ def check_state(url):
         return latest_data
 
 def email_messanger(username, password, news_data, recpients):
-    """
-    Notifiy receipent of news update
-    
-    Parameters:
-        username : str
-
-        password : str
-
-        news_data : dict
-
-        recpients : list
-
-    Returns:
-        email_messanger : 
-            Sends news alert update to recipients.
-        
-    """
-
     gmail_user = username
     gmail_password = password
 
@@ -116,24 +80,7 @@ def email_messanger(username, password, news_data, recpients):
 scheduler = sched.scheduler(time.time, time.sleep)
   
 def run_alert(sender, password, receivers):
-    """
-    Run alert checking process
 
-    Parameters:
-
-        sender : str
-
-        password : str
-
-        receivers : str
-
-        time_delay : int
-    
-    Returns:
-        run_alert:
-            Alert checking process on webpage.
-    """
-    
     url = 'https://www.dax-indices.com/news'
     
     
