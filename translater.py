@@ -23,17 +23,6 @@ def translate_pdf(pdf):
 
 
 def get_pdf_text(pdf_file):
-    """
-    Get text of PDF file
-
-    Parameters:
-        
-        pdf_file : str
-
-    Returns
-        get_pdf_text : pdftotext.PDF
-
-    """
     print(f'\nget_pdf_text for file : {pdf_file}')
 
     with open(pdf_file, 'rb') as f:
@@ -42,21 +31,6 @@ def get_pdf_text(pdf_file):
     return pages_text
 
 def translate_text(pages, language, out_file):
-    """
-    Translate text to new language and save to disk.
-    
-    Parameters:
-        
-        pages: 
-        
-        language: 
-        
-        out_file:
-        
-    Returns:
-        translate_text: 
-    
-    """
     print(f'translate text to into: {language}')
 
     
