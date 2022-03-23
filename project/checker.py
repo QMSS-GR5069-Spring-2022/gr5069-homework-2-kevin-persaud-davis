@@ -8,13 +8,6 @@ from scraper import run_news_scrape, update_scrape, initial_scrape
 
 
 def prev_state():
-    """
-    Previous state of webpage
-    
-    Returns:
-        prev_state : list
-            Last news update entry recorded
-    """
     dir_path = os.path.dirname(os.path.realpath(__file__))
     data_dir_path = dir_path + '\\data'     
     if os.path.isdir(data_dir_path):        
@@ -34,6 +27,8 @@ def prev_state():
 
 
 def check_state(url):
+<<<<<<< HEAD:checker.py
+=======
     """Check webpage status
     
     Parameters:
@@ -44,6 +39,7 @@ def check_state(url):
             If there is a difference in state a dict is returned.
             Otherwise None.
     """   
+>>>>>>> main:project/checker.py
     # read in the last news update from data directory
     # this contains the last headline from the site
     prev_data = prev_state()
@@ -60,6 +56,8 @@ def check_state(url):
 
 
 def email_messanger(username, password, news_data, recpients):
+<<<<<<< HEAD:checker.py
+=======
     """
     Notifiy receipent of news update
     
@@ -77,6 +75,7 @@ def email_messanger(username, password, news_data, recpients):
             Sends news alert update to recipients.
         
     """
+>>>>>>> main:project/checker.py
     gmail_user = username
     gmail_password = password
     sent_from = gmail_user
@@ -100,13 +99,12 @@ def email_messanger(username, password, news_data, recpients):
 scheduler = sched.scheduler(time.time, time.sleep)
   
 def run_alert(sender, password, receivers):
-    """
-    Run alert checking process
 
-    Parameters:
-
-        sender : str
-
+<<<<<<< HEAD:checker.py
+    url = 'https://www.dax-indices.com/news'
+    
+    
+=======
         password : str
 
         receivers : str
@@ -118,6 +116,7 @@ def run_alert(sender, password, receivers):
             Alert checking process on webpage.
     """    
     url = 'https://www.dax-indices.com/news'    
+>>>>>>> main:project/checker.py
     dir_path = os.path.dirname(os.path.realpath(__file__))
     data_dir_path = dir_path + '\\data'    
     if os.path.isdir(data_dir_path):
